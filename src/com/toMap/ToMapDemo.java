@@ -35,5 +35,7 @@ public class ToMapDemo {
 
         Map<String, Student> nameToStudent = students.stream()
                 .collect(Collectors.toMap(Student::getName, Function.identity(), (oldStudent,newStudent)->oldStudent,TreeMap::new));
+        System.out.println("-----------");
+        System.out.println(nameToStudent);
     }
 }

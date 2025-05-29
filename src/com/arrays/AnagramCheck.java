@@ -2,6 +2,8 @@ package com.arrays;
 
 import java.util.stream.Collectors;
 
+
+
 public class AnagramCheck {
     public static void main(String[] args) {
         String name1 = "listen";
@@ -16,6 +18,10 @@ public class AnagramCheck {
     public static String getSortedString(String name){
         String sortedString = name.chars().mapToObj(ch -> String.valueOf((char) ch)).sorted()
                 .collect(Collectors.joining());
+
+        String string = name.chars().sorted().collect(StringBuilder::new,StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
+        System.out.println("String----"+string);
         return sortedString;
     }
 }
